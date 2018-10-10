@@ -10,6 +10,6 @@ describe('Home page', () => {
       <Home />
     )
 
-    expect(component.text()).toEqual('Awesome Todos APP!')
+    expect(component.text()).toBe('Awesome Todos APP!')
   })
 })
