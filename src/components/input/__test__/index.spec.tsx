@@ -5,10 +5,10 @@ import Input from '..'
 
 describe('Input', () => {
   it('should support prefix of class name', () => {
-    const PREFIX_CLASS = 'test'
+    const PREFIX_CLASS = 'test-input'
 
     const input = mount(<Input prefixCls={PREFIX_CLASS} />)
 
-    expect(input.find('input').hasClass(`${PREFIX_CLASS}-input`)).toBe(true)
+    expect(input.find('input').hasClass(PREFIX_CLASS)).toBe(true)
   })
 })

@@ -1,8 +1,10 @@
 import * as React from 'react'
 
+import Input from '../../components/input'
+
 class Home extends React.Component {
-  public render() {
-    return 'Awesome Todos APP!'
+  render() {
+    return <Input placeholder="What needs to be done?" />
   }
 }
 

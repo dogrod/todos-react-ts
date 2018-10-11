@@ -1,12 +1,14 @@
 import * as React from 'react'
 
+import omit from 'omit.js'
+
 interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
   prefixCls?: string
 }
 
 class Input extends React.Component<PropTypes> {
-  private static defaultProps: PropTypes = {
-    prefixCls: 'dr',
+  static defaultProps: PropTypes = {
+    prefixCls: 'dr-input',
     type: 'text',
   }
 
@@ -14,14 +16,18 @@ class Input extends React.Component<PropTypes> {
     super(props)
   }
 
-  public render() {
+  getAttributes() {
     const { props } = this
 
+    return {
+      ...omit(this.props, ['prefixCls']),
+      className: props.prefixCls,
+    }
+  }
+
+  render() {
     return (
-      <input
-        className={`${props.prefixCls}-input`}
-        type={props.type}
-      />
+      <input {...this.getAttributes()} />
     )
   }
 }
