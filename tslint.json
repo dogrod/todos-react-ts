@@ -10,6 +10,6 @@
   "rules": {
     "interface-name": [true, "never-prefix"],
     "member-access": [true, "no-public"],
-    "no-var-requires": false,
+    "no-var-requires": false
   }
 }
